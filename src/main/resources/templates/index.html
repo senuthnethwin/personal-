@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Senuth Nethwin | Cyber Security Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="noise"></div>
+<div class="cursor-glow"></div>
+
+<div id="loader" class="loader">
+    <div class="access-card">
+        <div class="loader-ring"></div>
+        <p id="loaderText">Initializing Senuth Portfolio...</p>
+        <div class="loader-bar"><span></span></div>
+    </div>
+</div>
+
+<button class="theme-toggle" id="themeToggle" aria-label="Toggle dark and light mode">☾ Dark</button>
+
+<button class="ai-launcher" id="aiLauncher" aria-label="Turn on Senuth AI Guide">
+    <span class="launcher-face">AI</span>
+    <span>Turn on Senuth AI Guide</span>
+</button>
+
+<div class="ai-popup" id="aiPopup">
+    <button class="close-ai" id="closeAi">×</button>
+    <div class="ai-human">
+        <div class="ai-head">
+            <div class="ai-eye"></div>
+            <div class="ai-eye"></div>
+            <div class="ai-mouth"></div>
+        </div>
+        <div class="ai-body"></div>
+        <span class="ai-status">ONLINE</span>
+    </div>
+    <div class="ai-content">
+        <p class="ai-label">Senuth AI Guide</p>
+        <h3>Hello visitor, I can guide you.</h3>
+        <p id="aiMessage">Welcome to Senuth’s portfolio. Ask me about his skills, projects, education, certificates, CV, or contact details.</p>
+        <div class="ai-quick-actions">
+            <button data-answer="skills">Skills</button>
+            <button data-answer="services">Services</button>
+            <button data-answer="projects">Projects</button>
+            <button data-answer="education">Education</button>
+            <button data-answer="contact">Contact</button>
+        </div>
+        <div class="ai-chat-row">
+            <input id="aiInput" type="text" placeholder="Ask: projects, CV, certificates, contact...">
+            <button id="askAi">Ask</button>
+        </div>
+        <button class="ai-btn" id="startVoice">▶ Voice Greeting</button>
+    </div>
+</div>
+
+<header class="navbar">
+    <a class="brand" href="#home"><span>SN</span> Senuth</a>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#certificates">Certificates</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <a class="nav-btn" href="mailto:senuthnethwin@gmail.com">Hire / Contact</a>
+</header>
+
+<main>
+    <section id="home" class="hero section reveal">
+        <div class="hero-left">
+            <p class="eyebrow">Cyber Security • Spring Boot • Networking</p>
+            <h1>Hi, I’m <span>Senuth Nethwin.</span></h1>
+            <p class="hero-text">A cyber security undergraduate building secure Java web systems, clean user interfaces, and practical network solutions. My goal is to become a Security Architect.</p>
+            <div class="hero-actions">
+                <a href="#projects" class="primary-btn">View Projects</a>
+                <a href="/docs/Senuth-Nethwin-CV.pdf" th:href="@{/docs/Senuth-Nethwin-CV.pdf}" class="secondary-btn" download="Senuth-Nethwin-CV.pdf">Download CV</a>
+                <a href="#contact" class="secondary-btn">Contact Me</a>
+            </div>
+            <div class="stats">
+                <div><strong>Java</strong><small>Spring Boot</small></div>
+                <div><strong>Cyber</strong><small>Security Focus</small></div>
+                <div><strong>SLIIT</strong><small>Undergraduate</small></div>
+            </div>
+            <div class="status-badges">
+                <span>🟢 Available for Projects</span>
+                <span>📍 Based in Sri Lanka</span>
+                <span>🎓 Cyber Security Undergraduate</span>
+                <span>👁 <b id="visitorCount">0</b> Portfolio Visits</span>
+            </div>
+        </div>
+        <div class="hero-right">
+            <div class="profile-animation-card reveal">
+                <div class="matrix-boxes" aria-hidden="true">
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                </div>
+                <div class="profile-placeholder photo-build">
+                    <img th:src="@{/images/senuth-profile.jpeg}" alt="Senuth Nethwin profile photo">
+                </div>
+                <h3>Senuth Nethwin</h3>
+                <p>Cyber Security Student • Future Security Architect</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section reveal">
+        <div class="section-title">
+            <p>About Me</p>
+            <h2>Building my future in cyber security.</h2>
+        </div>
+        <div class="about-grid">
+            <div class="glass-card big-card">
+                <h3>Who I Am</h3>
+                <p>I’m Senuth Nethwin, a Cyber Security student at SLIIT. I enjoy learning Java, Spring Boot, networking, OOP, DSA, and secure system design. I like building projects that look modern and also work properly.</p>
+            </div>
+            <div class="glass-card">
+                <h3>Goal</h3>
+                <p>Become a professional Security Architect and design secure systems for real companies.</p>
+            </div>
+            <div class="glass-card quote-card">
+                <h3>Quote</h3>
+                <p>“Learning today to secure tomorrow’s digital world.”</p>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="goal" class="section reveal goal-section">
+        <div class="goal-card glass-card">
+            <p class="eyebrow">My Goal</p>
+            <h2>Future Security Architect</h2>
+            <p>My goal is to become a Security Architect by building strong skills in secure software development, networking, cloud security, ethical hacking, and real-world system design.</p>
+            <div class="goal-points">
+                <span>Secure coding</span>
+                <span>Network security</span>
+                <span>Cloud security</span>
+                <span>System architecture</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="section reveal">
+        <div class="section-title">
+            <p>Education Timeline</p>
+            <h2>My learning path.</h2>
+        </div>
+        <div class="timeline">
+            <div class="timeline-item"><span></span><div><h3>D.S. Senanayake College</h3><p>School foundation, discipline, teamwork, and academic growth.</p></div></div>
+            <div class="timeline-item"><span></span><div><h3>SLIIT University</h3><p>Cyber Security degree path with programming, networking, and software engineering skills.</p></div></div>
+            <div class="timeline-item"><span></span><div><h3>Current Focus</h3><p>Java, Spring Boot, OOP, DSA, cybersecurity fundamentals, and practical web projects.</p></div></div>
+            <div class="timeline-item"><span></span><div><h3>Future Goal</h3><p>Become a Security Architect who can design secure and scalable systems.</p></div></div>
+        </div>
+    </section>
+
+    <section id="skills" class="section reveal">
+        <div class="section-title">
+            <p>Skills</p>
+            <h2>Tools and technologies I’m learning.</h2>
+        </div>
+        <div class="skills-grid">
+            <div class="skill-card"><span>01</span><h3>Java</h3><p>OOP, classes, interfaces, inheritance, polymorphism, and file handling.</p><div class="skill-meter"><b style="width:75%"></b></div><small>75%</small></div>
+            <div class="skill-card"><span>02</span><h3>Spring Boot</h3><p>Controllers, routes, Thymeleaf pages, Maven, and clean web structure.</p><div class="skill-meter"><b style="width:65%"></b></div><small>65%</small></div>
+            <div class="skill-card"><span>03</span><h3>Networking</h3><p>Packet Tracer, LAN design, routing, switching, and cabling basics.</p><div class="skill-meter"><b style="width:70%"></b></div><small>70%</small></div>
+            <div class="skill-card"><span>04</span><h3>Cyber Security</h3><p>Secure thinking, risk awareness, access control, and system protection basics.</p><div class="skill-meter"><b style="width:60%"></b></div><small>60%</small></div>
+            <div class="skill-card"><span>05</span><h3>Web UI</h3><p>HTML, CSS, JavaScript animations, responsive layout, and dark UI design.</p><div class="skill-meter"><b style="width:72%"></b></div><small>72%</small></div>
+            <div class="skill-card"><span>06</span><h3>Problem Solving</h3><p>DSA basics, structured thinking, and exam-ready code practice.</p><div class="skill-meter"><b style="width:68%"></b></div><small>68%</small></div>
+        </div>
+    </section>
+
+
+    <section id="services" class="section reveal">
+        <div class="section-title">
+            <p>Services</p>
+            <h2>What I can help with.</h2>
+        </div>
+        <div class="services-grid">
+            <div class="service-card"><span>💻</span><h3>Web Development</h3><p>Modern responsive websites using HTML, CSS, JavaScript, Thymeleaf, and Spring Boot.</p></div>
+            <div class="service-card"><span>☕</span><h3>Spring Boot Projects</h3><p>Java web projects with controllers, pages, validation, and clean project structure.</p></div>
+            <div class="service-card"><span>🛡</span><h3>Cyber Security Basics</h3><p>Security-focused thinking, safe design ideas, and beginner-level cyber awareness.</p></div>
+            <div class="service-card"><span>🌐</span><h3>Network Design</h3><p>LAN planning, floor layouts, access points, switches, cabling, and Packet Tracer practice.</p></div>
+            <div class="service-card"><span>🎨</span><h3>UI Design</h3><p>Animated dark/light interfaces, cards, hover effects, and clean visual layouts.</p></div>
+            <div class="service-card"><span>📚</span><h3>Project Support</h3><p>Academic project planning, reports, diagrams, code explanation, and presentation support.</p></div>
+        </div>
+    </section>
+
+    <section id="learning" class="section reveal learning-section">
+        <div class="section-title">
+            <p>Currently Learning</p>
+            <h2>Skills I am improving now.</h2>
+        </div>
+        <div class="learning-grid">
+            <div>Cyber Security</div>
+            <div>Spring Boot</div>
+            <div>Networking</div>
+            <div>Ethical Hacking</div>
+            <div>Cloud Security</div>
+            <div>DSA & OOP</div>
+        </div>
+    </section>
+
+    <section id="projects" class="section reveal">
+        <div class="section-title">
+            <p>Projects</p>
+            <h2>Featured work.</h2>
+        </div>
+        <div class="project-grid">
+            <article class="project-card" data-project="bakery">
+                <div class="project-shot bakery-shot"><span>Bakery System Screenshot</span></div>
+                <div class="project-top">Spring Boot</div>
+                <h3>Bakery Order & Custom Cake Booking Platform</h3>
+                <p>Java web system with order handling, custom bookings, payment management, offers, and admin/customer interfaces.</p>
+                <div class="project-actions"><button class="open-project" type="button">View Details</button><a href="https://github.com/senuthnethwin" target="_blank" rel="noopener noreferrer">GitHub Code</a></div>
+            </article>
+            <article class="project-card" data-project="network">
+                <div class="project-shot network-shot"><span>Network Design Screenshot</span></div>
+                <div class="project-top">Networking</div>
+                <h3>Office Network Design</h3>
+                <p>Designed a multi-floor office network with switches, access points, rack planning, and structured cabling ideas.</p>
+                <div class="project-actions"><button class="open-project" type="button">View Details</button><a href="https://github.com/senuthnethwin" target="_blank" rel="noopener noreferrer">GitHub Code</a></div>
+            </article>
+            <article class="project-card" data-project="portfolio">
+                <div class="project-shot portfolio-shot"><span>Portfolio Screenshot</span></div>
+                <div class="project-top">Portfolio</div>
+                <h3>Animated Personal Website</h3>
+                <p>This Spring Boot website uses Thymeleaf, CSS animations, JavaScript effects, and an AI welcome guide.</p>
+                <div class="project-actions"><button class="open-project" type="button">View Details</button><a href="#home">View Demo</a></div>
+            </article>
+        </div>
+    </section>
+
+    <section id="github" class="section reveal">
+        <div class="section-title">
+            <p>GitHub Projects</p>
+            <h2>Code and learning work.</h2>
+        </div>
+        <div class="github-grid">
+            <div class="github-card"><h3>Spring Boot Portfolio</h3><p>Personal website with animations, AI guide, contact form, and project popups.</p><div><span>Java</span><span>Spring Boot</span><span>Thymeleaf</span></div><a href="https://github.com/senuthnethwin" target="_blank" rel="noopener noreferrer">View GitHub</a></div>
+            <div class="github-card"><h3>Bakery System</h3><p>Academic project focused on orders, custom cake bookings, payments, and offers.</p><div><span>Java</span><span>OOP</span><span>File Handling</span></div><a href="https://github.com/senuthnethwin" target="_blank" rel="noopener noreferrer">View GitHub</a></div>
+            <div class="github-card"><h3>Networking Practice</h3><p>Packet Tracer and network design learning work for practical cybersecurity basics.</p><div><span>Networking</span><span>LAN</span><span>Security</span></div><a href="https://github.com/senuthnethwin" target="_blank" rel="noopener noreferrer">View GitHub</a></div>
+        </div>
+    </section>
+
+    <section id="certificates" class="section reveal">
+        <div class="section-title">
+            <p>Certificates</p>
+            <h2>Professional learning areas.</h2>
+        </div>
+        <div class="cert-grid">
+            <div class="cert-card"><span>🛡</span><h3>Cybersecurity</h3><p>Security fundamentals, cyber awareness, and safe system thinking.</p><a href="#contact">Add Certificate</a></div>
+            <div class="cert-card"><span>☕</span><h3>Java / Spring Boot</h3><p>Backend development, OOP concepts, web controllers, and project structure.</p><a href="#contact">Add Certificate</a></div>
+            <div class="cert-card"><span>🌐</span><h3>Networking</h3><p>Routing, switching, LAN design, access points, and network planning.</p><a href="#contact">Add Certificate</a></div>
+            <div class="cert-card"><span>💻</span><h3>Web Development</h3><p>HTML, CSS, JavaScript, responsive design, and animated interfaces.</p><a href="#contact">Add Certificate</a></div>
+        </div>
+    </section>
+
+
+    <section id="testimonials" class="section reveal">
+        <div class="section-title">
+            <p>Feedback</p>
+            <h2>What people can say about my work.</h2>
+        </div>
+        <div class="testimonial-grid">
+            <div class="testimonial-card"><p>“Senuth is hardworking and always tries to improve his Java and cybersecurity skills.”</p><h3>Academic Project Feedback</h3></div>
+            <div class="testimonial-card"><p>“He focuses on clean design, useful features, and practical project structure.”</p><h3>Portfolio Review</h3></div>
+            <div class="testimonial-card"><p>“A motivated student building a strong path toward secure system design.”</p><h3>Learning Highlight</h3></div>
+        </div>
+    </section>
+
+    <section id="contact" class="section reveal contact-section">
+        <div class="glass-card contact-card">
+            <p class="eyebrow">Let’s Connect</p>
+            <h2>Have a project, idea, or opportunity?</h2>
+            <p>Email me or connect with me on Instagram and LinkedIn. You can also send a message using the form below.</p>
+            <form class="contact-form" id="contactForm">
+                <div class="form-row">
+                    <input type="text" id="visitorName" placeholder="Your name" required>
+                    <input type="email" id="visitorEmail" placeholder="Your email" required>
+                </div>
+                <textarea id="visitorMessage" placeholder="Write your message" rows="5" required></textarea>
+                <button class="primary-btn" type="submit">Send Message</button>
+                <p id="formStatus" class="form-status"></p>
+            </form>
+            <div class="contact-links">
+                <a class="primary-btn" href="mailto:senuthnethwin@gmail.com">Email Me</a>
+                <a class="social-btn" href="https://www.instagram.com/senuthnethwin" target="_blank" rel="noopener noreferrer">Instagram</a>
+                <a class="social-btn" href="https://www.linkedin.com/in/senuth-nethwin-780298219" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </div>
+            <p class="contact-note">Email: senuthnethwin@gmail.com</p>
+        </div>
+    </section>
+</main>
+
+<div class="project-modal" id="projectModal" aria-hidden="true">
+    <div class="modal-card">
+        <button class="modal-close" id="modalClose">×</button>
+        <p class="modal-tag" id="modalTag">Project</p>
+        <h2 id="modalTitle">Project Title</h2>
+        <p id="modalDescription">Project description</p>
+        <div class="modal-info">
+            <div><strong>Technologies</strong><span id="modalTech">Java</span></div>
+            <div><strong>My Role</strong><span id="modalRole">Developer</span></div>
+            <div><strong>Status</strong><span id="modalStatus">Learning Project</span></div>
+        </div>
+        <a class="primary-btn" id="modalLink" href="https://github.com/senuthnethwin" target="_blank" rel="noopener noreferrer">Open GitHub</a>
+    </div>
+</div>
+
+<a class="whatsapp-float" href="https://wa.me/?text=Hello%20Senuth,%20I%20visited%20your%20portfolio" target="_blank" rel="noopener noreferrer" aria-label="Contact Senuth on WhatsApp">WhatsApp</a>
+
+<footer>
+    <p>© 2026 Senuth Nethwin.</p>
+</footer>
+
+<script th:src="@{/js/script.js}"></script>
+</body>
+</html>
